@@ -42,13 +42,7 @@ if(!isset($_SESSION))
 
 
 	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/style.css">
 
-	<link rel="stylesheet" type="text/css" href="css/login-style.css">
-	<link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/about/style.css">
 
     <title>About Us</title>
   </head>
@@ -80,7 +74,7 @@ if(!isset($_SESSION))
         <div class="row">
             <div class="col">
             
-                <h1>ABOUT US</h1>
+              
 
             <hr class= "featurette-divider">
 
@@ -110,14 +104,7 @@ if(!isset($_SESSION))
                 </p>
             </div>
 
-            <div class= "col">
-                <img class="rounded-circle" src="/about/110278074_1661474237360551_2573287637270735852_n.jpg" alt="" width="140" height="140">
-                <h5>Shashika Mihiran</h5>
-                <p></p>
-                <p>
-                    <a class= "btn btn-secondary" href="https://github.com/rmsmrathnayake" role="button"> View detail</a>
-                </p>
-            </div>
+         
 
             <div class= "col">
                 <img class="rounded-circle" src="/about/109967668_3132988263451821_1149281672305369712_o.jpg" alt="" width="140" height="140">
@@ -165,9 +152,7 @@ if(!isset($_SESSION))
                             <li class="ftco-animate"><a target="_blank"
                                     href="https://facebook.com/seasidesouthparknsbm"><span
                                         class="icon-facebook"></span></a></li>
-                            <li class="ftco-animate"><a target="_blank"
-                                    href="https://instagram.com/seasidesouthparknsbm"><span
-                                        class="icon-instagram"></span></a></li>
+                           
                         </ul>
                     </div>
                 </div>
