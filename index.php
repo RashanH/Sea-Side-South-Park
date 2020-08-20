@@ -1,4 +1,22 @@
+<?php 
+	if(!isset($_SESSION)) 
+	{ 
+		session_start(); 
+	} 
 
+
+	if (!isset($_SESSION['username'])) {
+		//$_SESSION['msg'] = "You must log in first";
+		//header('location: login.php');
+	}
+
+	if (isset($_GET['logout'])) {
+		session_destroy();
+		unset($_SESSION['username']);
+		header("location: index.php");
+	}
+
+?>
 
 
 <!DOCTYPE html>
@@ -16,6 +34,10 @@
 
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
+
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
 
 	<link rel="stylesheet" href="css/aos.css">
 
@@ -383,7 +405,26 @@ stay with our hotel - Sea Side South Park!
 					</p>
 				</div>
 			</div>
-		
+			<div class="row d-flex">
+				<div class="col-md-4 d-flex ">
+					<div class="blog-entry justify-content-end">
+						<a class="block-20" style="background-image: url('images/image_1.jpg');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<div class="d-flex align-items-center mb-4 topp">
+								<div class="one">
+									<span class="day">25</span>
+								</div>
+								<div class="two">
+									<span class="yr">2020</span>
+									<span class="mos">September</span>
+								</div>
+							</div>
+							<h3 class="heading"><a>WELIGAMA PEREHERA</a></h3>
+							<p>The largest 'perahara' festival in Weligama area.</p>
+						</div>
+					</div>
+				</div>
 				<div class="col-md-4 d-flex ">
 					<div class="blog-entry justify-content-end">
 						<a class="block-20"
@@ -449,7 +490,19 @@ stay with our hotel - Sea Side South Park!
                         </ul>
                     </div>
                 </div>
-                
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-5">
+                        <h2 class="ftco-heading-2">Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="index.php" class="py-2 d-block">Homepage</a></li>
+                            <li><a href="about.php" class="py-2 d-block">About</a></li>
+                            <li><a href="contact.php" class="py-2 d-block">Contact</a></li>
+                            <li><a href="network.php" class="py-2 d-block">Our network</a></li>
+                            <li><a href="reserve.php" class="py-2 d-block">Reserve</a></li>
+                            <li><a href="login.php" class="py-2 d-block">Account</a></li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Have a Questions?</h2>

@@ -18,6 +18,9 @@ if (isset($_SESSION['username'])) {
 
 <head>
 	<title>Register | Sea Side South Park</title>
+	<link rel="icon" href="favicon.png" type="image/png">
+	<meta name="description" content="Sea side south part. The best hotel network.">
+<meta name="keywords" content="Sea side south park, Sea side hotel, Sea side, best hotels in sri lanka, hotels to stay">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

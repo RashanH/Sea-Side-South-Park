@@ -1,37 +1,26 @@
 <?php
 if(!isset($_SESSION)) 
 { 
-    session_start(); 
+	session_start(); 
 } 
-$db = mysqli_connect('localhost', 'root', '', 'seaside');
-
 ?>
 
-<?php
-if (count($_POST)>0){
-        $name = mysqli_real_escape_string($db, $_POST['name']);
-		$email = mysqli_real_escape_string($db, $_POST['email']);
-		$phone = mysqli_real_escape_string($db, $_POST['phone']);
-		$msg = mysqli_real_escape_string($db, $_POST['msg']);
-
-        $query = "INSERT INTO contact_queries (cname, email, phone, msg) 
-                      VALUES('$name', '$email', '$phone', '$msg')";
-                      
-        if (empty($name) || empty($email) || empty($phone) || empty($msg)) { 
-            //validation
-            echo '<div class="error">Fill all details!</div>';
-        } elseif (mysqli_query($db, $query)){
-            //sucess
-            echo '<div class="error">Thank you!</div>';
-        } else{
-            //error
-            echo '<div class="error"Err</div>';
-        }
-
-}
+<?php include('server.php') ?>
 
 
-?>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -40,11 +29,12 @@ if (count($_POST)>0){
 <html lang="en">
 
 <head>
-    <title>Contact Us | Sea Side South Park</title>
+    <title>Our Network | Sea Side South Park</title>
+    <meta charset="utf-8">
     <link rel="icon" href="favicon.png" type="image/png">
     <meta name="description" content="Sea side south part. The best hotel network.">
-<meta name="keywords" content="Sea side south park, Sea side hotel, Sea side, best hotels in sri lanka, hotels to stay">
-    <meta charset="utf-8">
+    <meta name="keywords"
+        content="Sea side south park, Sea side hotel, Sea side, best hotels in sri lanka, hotels to stay">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
@@ -70,7 +60,6 @@ if (count($_POST)>0){
 
     <link rel="stylesheet" type="text/css" href="css/login-style.css">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/contact-css.css">
 </head>
 
 <body>
@@ -86,15 +75,9 @@ if (count($_POST)>0){
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.php" class="nav-link">HOME</a></li>
                     <li class="nav-item"><a href="about.php" class="nav-link">ABOUT</a></li>
-                    <li class="nav-item active"><a href="contact.php" class="nav-link">CONTACT US</a></li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link">CONTACT US</a></li>
                     <li class="nav-item"><a href="reserve.php" class="nav-link">RESERVE</a></li>
-                    <?php  if (isset($_SESSION['username'])) : ?>
-                    <li class="nav-item"><a href="index.php?logout=1" class="nav-link">LOGOUT
-                            (<?php echo $_SESSION['username']; ?>)</a></li>
-                    <?php endif ?>
-                    <?php  if (!isset($_SESSION['username'])) : ?>
                     <li class="nav-item"><a href="login.php" class="nav-link">LOGIN</a></li>
-                    <?php endif ?>
 
                 </ul>
             </div>
@@ -103,88 +86,58 @@ if (count($_POST)>0){
     <!-- END nav -->
 
 
-    <section style="background-image: url(images/bg-01.jpg); background-size: cover;">
-        <div class="container">
-            <div class="row no-gutters">
-                <div class="container contact-form">
-                    <div class="contact-image">
-                        <img src="images/contact_rocket.png" alt="Contact" />
-                    </div>
-                    <form method="post" action="contact.php" style="border: none;">
-                        <h3>Drop Us a Message</h3>
-
-
-                        <?php
-if (count($_POST)>0){
-        $name = mysqli_real_escape_string($db, $_POST['name']);
-		$email = mysqli_real_escape_string($db, $_POST['email']);
-		$phone = mysqli_real_escape_string($db, $_POST['phone']);
-		$msg = mysqli_real_escape_string($db, $_POST['msg']);
-
-        $query = "INSERT INTO contact_queries (cname, email, phone, msg) 
-                      VALUES('$name', '$email', '$phone', '$msg')";
-                      
-        if (empty($name) || empty($email) || empty($phone) || empty($msg)) { 
-            //validation
-            echo '<div class="error">Fill all details!</div>';
-        } elseif (mysqli_query($db, $query)){
-            //sucess
-            echo '<div class="success">We will get back to you soon!</div>';
-        } else {
-            //error
-            echo '<div class="error">Error</div>';
-        }
-
-}
-
-
-?>
-
-
-
-
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name *"
-                                        value="<?php  if (isset($_SESSION['username'])) : echo $_SESSION['fname']. ' ' . $_SESSION['lname']; endif ?>"
-                                        <?php  if (isset($_SESSION['username'])) : echo 'disabled'; endif ?> />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="email" class="form-control" placeholder="Your Email *"
-                                        value="<?php  if (isset($_SESSION['username'])) : echo $_SESSION['email']; endif ?>"
-                                        <?php  if (isset($_SESSION['username'])) : echo 'disabled'; endif ?> />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="phone" class="form-control"
-                                        placeholder="Your Phone Number *"
-                                        value="<?php  if (isset($_SESSION['username'])) : echo $_SESSION['phone']; endif ?>"
-                                        <?php  if (isset($_SESSION['username'])) : echo 'disabled'; endif ?> />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea name="msg" class="form-control" placeholder="Your Message *"
-                                        style="width: 100%; min-height: 150px !important;"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <br> <br> <br>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="submit" name="contact_submit" class="btnContact"
-                                        value="Send Message" />
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
+    <div class="container">
+    <div class="row" style="padding-top: 100px;">
+            <div class="col">
+                <h3>SEA SIDE SOUTH PARK - MIRISSA</h3>
             </div>
         </div>
-    </section>
+        <div class="row">
+            <div class="col-sm">
+                <img src="images/hotel_1.jpg" class="img-fluid" alt="SEA SIDE SOUTH PARK - MIRISSA">
+            </div>
+            <div class="col-sm">
+                Fourty Five minutes east of Galle, Sea Side South Park Mirissa inhabits 12 manicured acres atop a
+                singular promontory rising 20 meters above the Indian Ocean. Stunning panoramas await you, naturally
+                complementing the 15 private retreats designed by one of Asia's most celebrated architects, Jefri Bawa.
+                This spectacular luxury tented camp is situated on a rugged, empty beach, overlooking the Indian Ocean.
+                The use of arched fabric structures allows each of the 28 Cocoon pods to take on the shape of the rocks
+                and boulders that lay scattered nearby.
+            </div>
+        </div>
+
+
+
+        <div class="row" style="padding-top: 100px;">
+            <div class="col">
+                <h3>SEA SIDE SOUTH PARK - TANGALLA</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <img src="images/hotel_2.jpg" class="img-fluid" alt="SEA SIDE SOUTH PARK - TANGALLA">
+            </div>
+            <div class="col-sm">
+            Ninty minutes east of Galle, Sea Side South Park Tangalle inhabits 14 manicured acres atop a singular promontory rising 15 meters above the Indian Ocean. Stunning panoramas await you, naturally complementing the 15 private retreats designed by one of Asia's most celebrated architects, Jefri Bawa. The vaulted bamboo restaurant and bar overlook a large freeform pool.
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 100px;">
+            <div class="col">
+                <h3>SEA SIDE SOUTH PARK -WELIGAMA</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <img src="images/hotel_3.jpg" class="img-fluid" alt="SEA SIDE SOUTH PARK -WELIGAMA">
+            </div>
+            <div class="col-sm">
+            Thirty minutes east of Galle, Sea Side South Park Weligama inhabits 15 manicured acres atop a singular promontory rising 30 meters above the Indian Ocean. Stunning panoramas await you, naturally complementing the 20 private retreats designed by one of Asia's most celebrated architects, Jefri Bawa. An array of dining venues capture Weligama's iconic sunsets, as does the 60-metre crescent-shaped infinity pool that appears to flow seamlessly into the shimmering sea.
+            </div>
+        </div>
+    </div>
+
+
 
     <footer class="ftco-footer bg-bottom" style="background-image: url(images/footer-bg.jpg);">
         <div class="container">
@@ -248,6 +201,14 @@ if (count($_POST)>0){
     </footer>
 
 
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" /></svg></div>
+
+
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -261,6 +222,9 @@ if (count($_POST)>0){
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/scrollax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
+    </script>
+    <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
 
 </body>
