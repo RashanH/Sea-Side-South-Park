@@ -1,0 +1,158 @@
+#box1{
+    padding: 120px 0px 120px;
+    text-align: center;
+}
+
+#box1 .brand {
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+#box1 .welcome {
+    font-size: 26px;
+    padding-bottom: 10px;
+}
+
+#box1 blockquote {
+    font-size: 18px;
+    padding-bottom: 30px;
+}
+
+#box1 p {
+    font-size: 16px;
+    padding: 12px 40px 12px;
+}
+
+#why-us {
+    text-align: center;
+    padding: 12px 30px 12px;
+}
+
+#why-us .whyheadline {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#why-us h1{
+    text-align:center;
+    padding-bottom: 15px;
+}
+
+#why-us p {
+    font-size: 24px;
+    text-align:center;
+    padding-bottom: 30px;
+}
+
+#box2 {
+    padding: 20px 0px 20px;
+    text-align: center;
+}
+
+#box2 .brand {
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+#box2 .welcome {
+    font-size: 26px;
+    padding-bottom: 10px;
+}
+
+#box2 blockquote {
+    font-size: 18px;
+    padding-bottom: 30px;
+}
+
+#box2 p {
+    font-size: 16px;
+    padding: 12px 40px 12px;
+    margin: 50px;
+}
+
+#box2 .text-pad {
+    background: #ffffffc4;
+    color: #1d1d1d;
+    padding: 60px 0px 60px;
+    margin: 10px;
+}
+
+#box3 {
+    padding: 20px 0px 20px;
+    text-align: center;
+}
+
+#box3 .brand {
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+#box3 .welcome {
+    font-size: 26px;
+    padding-bottom: 10px;
+}
+
+#box3 blockquote {
+    font-size: 18px;
+    padding-bottom: 30px;
+}
+
+#box3 p {
+    font-size: 16px;
+    padding: 12px 40px 12px;
+    margin: 50px;
+}
+
+#box3 .text-pad {
+    background: #ffffffc4;
+    color: #1d1d1d;
+    padding: 60px 0px 60px;
+    margin: 10px;
+}
+
+#box4 {
+    padding: 20px 0px 20px;
+    text-align: center;
+}
+
+#box4 .brand {
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+#box4 .welcome {
+    font-size: 26px;
+    padding-bottom: 10px;
+}
+
+#box4 blockquote {
+    font-size: 18px;
+    padding-bottom: 30px;
+}
+
+#box4 p {
+    font-size: 16px;
+    padding: 12px 40px 12px;
+    margin: 50px;
+}
+
+#box4 .text-pad {
+    background: #ffffffc4;
+    color: #1d1d1d;
+    padding: 60px 0px 60px;
+    margin: 10px;
+}
+
+#index-galary {
+
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
